@@ -62,3 +62,10 @@ Himanshu Rajak
 ## Credits
 
 This project is a solution to the project task provided by MetaCrafters.
+
+
+
+## LICENSE
+
+
+This project is licensed under the MIT License. See the [LICENSE](https://github.com/himanshkr03/mod-1_AVAX/blob/master/LICENSE) file for details.
