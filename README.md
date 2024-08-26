@@ -75,4 +75,4 @@ Himanshu Rajak
 
 ## Credits
 
-This project was created as a solution to a task provided by MetaCrafters, focusing on implementing and understanding secure smart contract fu
+This project was created as a solution to a task provided by MetaCrafters, focusing on implementing and understanding secure smart contract functions.
