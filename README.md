@@ -1,71 +1,46 @@
-# ExceptionHandling Smart Contract
+Metacrafters Project
+This repository contains the source code for the MyContract smart contract. The contract is written in Solidity version 0.8.0 and implements the withdraw function with require, assert, and revert statements, along with the getContractBalance function.
 
-## Metacrafters Project
-
-This repository contains the source code for the `ExceptionHandling` smart contract. The contract is written in Solidity version 0.8.18 and demonstrates the usage of require, assert, and revert statements for exception handling.
-
-## Prerequisites
-
+Prerequisites
 Before running the smart contract, make sure you have the following prerequisites installed:
 
-- Solidity compiler (version 0.8.18)
-- Ethereum development environment (e.g., Remix, Truffle, Hardhat)
+Solidity compiler (version 0.8.0)
+Ethereum development environment (e.g., Remix, Truffle, Hardhat)
+Getting Started
+Follow the steps below to get started with the MyContract smart contract:
 
-## Getting Started
+Clone this repository to your local machine.
+Open the project in your preferred Ethereum development environment.
+Compile the smart contract using the Solidity compiler.
+Deploy the contract to your preferred Ethereum network.
+Interact with the contract using the provided functions.
+Contract Details
+Description
+The MyContract contract allows the contract owner to withdraw funds from the contract balance. The contract owner is set during the contract deployment.
 
-Follow the steps below to get started with the `ExceptionHandling` smart contract:
+Functions
+constructor()
+The constructor function is executed once during contract deployment. It sets the contract owner to the address of the message sender.
 
-1. Clone this repository to your local machine.
-2. Open the project in your preferred Ethereum development environment.
-3. Compile the smart contract using the Solidity compiler.
-4. Deploy the contract to your preferred Ethereum network.
-5. Interact with the contract using the provided functions.
+withdraw(uint amount)
+The withdraw function allows the contract owner to withdraw a specified amount of funds from the contract balance. It includes several checks using require statements to ensure the withdrawal conditions are met:
 
-## Contract Details
+The amount must be greater than zero.
+The contract balance must be equal to or greater than the requested amount.
+If the require conditions are satisfied, the function attempts to transfer the funds to the message sender using the call function. The assert statement checks if the transfer was successful. If the transfer fails, the function reverts with an error message using the revert statement.
 
-### Description
+getContractBalance()
+The getContractBalance function is a view function that returns the current balance of the contract.
 
-The `ExceptionHandling` contract allows the contract owner to perform various operations with exception handling. The contract owner is set during the contract deployment.
+Usage
+To use the MyContract smart contract, follow these steps:
 
-### Functions
+Deploy the contract by calling the constructor function.
+As the contract owner, call the withdraw function and provide the amount to withdraw.
+Verify that the withdrawal conditions are satisfied and the transfer is successful.
+To check the current balance of the contract, call the getContractBalance function.
+Authors
+HIMANSHU RAJAK
 
-#### requireFunction(uint x)
-
-The `requireFunction` allows adding the given value to the `age` state variable. It uses a `require` statement to ensure the input value is greater than zero.
-
-#### revertFunction(uint x)
-
-The `revertFunction` adds the given value to the `age` state variable. It uses a `revert` statement to handle the exception if the input value is less than or equal to zero.
-
-#### checkOwner()
-
-The `checkOwner` function verifies that the owner address matches a predefined address using an `assert` statement.
-
-#### getAge() public view returns (uint)
-
-The `getAge` function is a view function that returns the current value of the `age` state variable.
-
-## Usage
-
-To use the `ExceptionHandling` smart contract, follow these steps:
-
-1. Deploy the contract.
-2. Call the `requireFunction` with a non-zero value to update the `age` state variable.
-3. Call the `revertFunction` with a positive value to update the `age` state variable or with a zero/negative value to trigger the revert statement.
-4. Use the `checkOwner` function to ensure the owner address is as expected.
-5. Call the `getAge` function to retrieve the current value of the `age` state variable.
-
-## Authors
-
-Himanshu Rajak
-
-## Credits
-
+Credits
 This project is a solution to the project task provided by MetaCrafters.
-
-
-
-## LICENSE
-
-
-This project is licensed under the MIT License. See the [LICENSE](https://github.com/himanshkr03/mod-1_AVAX/blob/master/LICENSE) file for details.
