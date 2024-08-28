@@ -1,5 +1,5 @@
 
-# Wallet Contract - Fund Transaction Program
+# Wallet Contract - Fund Transaction 
 
 ## Description
 
