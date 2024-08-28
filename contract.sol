@@ -1,38 +1,27 @@
-
-
-
 // SPDX-License-Identifier: MIT
 pragma solidity 0.8.18;
 
-contract ExceptionHamdling{
-    
-    address public Owner_Address = msg.sender;
-    uint public age = 75;
+contract wallet{
 
+    uint public totalAmount;
+    address public owner;
 
-    function requireFunction(uint x) public{
-        require(x!=0,"The Required Age must be greater than 0");
-        age += x;
+    constructor(uint _totalAmount){
+        totalAmount = _totalAmount;
+        owner = msg.sender;
     }
 
-
-    function revertFunction(uint x) public{
-        age += x;
-        if(x<=0){
-
-            revert("The Value of Age should be > 0");
-        }
+    function transfer(uint amount, uint tax, address sendTo) public{
+        uint amountToBeDeducted = amount + tax;
+        totalAmount -= amountToBeDeducted;
+        if(amount < tax){
+            revert("tax should be less than amount to be transfer");
+        }        
+        require(amountToBeDeducted < totalAmount,"amount + tax should less than current balance");  
+        assert(owner != sendTo);       
     }
 
-
-    error throwError(string,address);
-
-
-    function checkOwner() public view{
-        assert(Owner_Address==0x5B38Da6a701c568545dCfcB03FcB875f56beddC4);
-    }
-
-    function getAge() public view returns (uint){
-        return age;
+    function getamount() public view returns(uint){
+        return totalAmount;
     }
 }
