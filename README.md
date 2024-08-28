@@ -62,3 +62,5 @@ This function returns the current balance of the wallet.
 ## Summary
 
 The Wallet Contract provides essential functionality for managing and transferring funds securely while showcasing Solidity's error-handling features. The contract ensures that all transactions are validated and that the wallet's integrity is maintained through the use of `revert`, `require`, and `assert` statements.
+##AUTHOR
+HIMANSHU RAJAK[github.com/himanshkr03]
